@@ -18,14 +18,8 @@
  * @since     1.0.0
  */
 
-namespace App\View\Helper;
+namespace SmartSolutionsItaly\CakePHP\YouTube\View\Helper;
 
-use App\Utility\Functions;
-use App\Utility\Sanitization;
-use Cake\Core\Configure;
-use Cake\I18n\Date;
-use Cake\Routing\Router;
-use Cake\Utility\Hash;
 use Cake\View\Helper;
 use Cake\View\StringTemplateTrait;
 use SmartSolutionsItaly\CakePHP\Database\Color;

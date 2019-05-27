@@ -21,12 +21,8 @@
 namespace SmartSolutionsItaly\CakePHP\YouTube\Model\Behavior;
 
 use Cake\Collection\CollectionInterface;
-use Cake\Core\Configure;
 use Cake\ORM\Behavior;
 use Cake\ORM\Query;
-use Cake\ORM\Table;
-use Cake\Routing\Router;
-use Cake\Utility\Hash;
 use SmartSolutionsItaly\CakePHP\YouTube\Http\Client\YouTubeClient;
 
 /**
