@@ -49,7 +49,7 @@ class YouTubeClient
         $client->setScopes([\Google_Service_YouTube::YOUTUBE]);
         $client->setAuthConfig(Configure::read('Google.service'));
         $client->useApplicationDefaultCredentials();
-        $this->_client = \Google_Service_YouTube($client);
+        $this->_client = new \Google_Service_YouTube($client);
     }
 
     /**
