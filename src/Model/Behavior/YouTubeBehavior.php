@@ -46,7 +46,7 @@ class YouTubeBehavior extends Behavior
      * Finder for YouTube channel items.
      * Adds a formatter to the query.
      * @param Query $query The query object.
-     * @param array $options Query options. Usually empty.
+     * @param array $options Query options. May contains "count", "field" and "format" elements.
      * @return Query The query object.
      */
     public function findYoutube(Query $query, array $options): Query
