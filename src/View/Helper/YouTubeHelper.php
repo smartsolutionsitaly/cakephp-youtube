@@ -50,7 +50,7 @@ class YouTubeHelper extends Helper
      */
     protected $_defaultConfig = [
         'templates' => [
-            'iframe' => '<iframe width="{{width}}" height="{{height}}" src="{{src}}" frameborder="0" allow="{{allow}}" allowfullscreen></iframe>'
+            'iframe' => '<iframe{{attrs}} allowfullscreen></iframe>'
         ]
     ];
 
@@ -63,23 +63,32 @@ class YouTubeHelper extends Helper
     public function embed(string $id, array $options = []): string
     {
         $options = $options + [
-                'width' => (int)$this->getConfig('count'),
-                'height' => (string)$this->getConfig('field'),
+                'width' => 560,
+                'height' => 315,
                 'allow' => [
                     'accelerometer',
                     'autoplay',
                     'encrypted-media',
                     'gyroscope',
                     'picture-in-picture'
-                ]
+                ],
+                'frameborder' => 0
             ];
 
         if (is_array($options['allow'])) {
             $options['allow'] = implode('; ', $options['allow']);
         }
 
+        if (isset($options['style']) && is_array($options['style'])) {
+            $options['style'] = implode('; ', array_map(function ($v, $k) {
+                return sprintf('%s: %s', $k, $v);
+            }, $options['style'], array_keys($options['style'])));
+        }
+
         $options['src'] = 'https://www.youtube.com/embed/' . $id;
 
-        return $this->formatTemplate('iframe', $options);
+        return $this->formatTemplate('iframe', [
+            'attrs' => $this->templater()->formatAttributes($options, [])
+        ]);
     }
 }
