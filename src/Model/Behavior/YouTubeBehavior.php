@@ -28,7 +28,7 @@ use SmartSolutionsItaly\CakePHP\YouTube\Http\Client\YouTubeClient;
 /**
  * YouTube behavior.
  * @package SmartSolutionsItaly\CakePHP\YouTube\Model\Behavior
- * @author Lucio Benini
+ * @author Lucio Benini <dev@smartsolutions.it>
  * @since 1.0.0
  */
 class YouTubeBehavior extends Behavior

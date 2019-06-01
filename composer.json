@@ -13,7 +13,8 @@
     "google/apiclient": "^2.2"
   },
   "require-dev": {
-    "cakephp/cakephp": "^3.6"
+    "cakephp/cakephp": "^3.6",
+    "phpunit/phpunit": "^5.7|^6.0"
   },
   "autoload": {
     "psr-4": {
