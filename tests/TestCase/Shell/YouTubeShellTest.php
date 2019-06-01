@@ -1,9 +1,10 @@
 <?php
+
 namespace SmartSolutionsItaly\CakePHP\YouTube\Test\TestCase\Shell;
 
-use SmartSolutionsItaly\CakePHP\YouTube\Shell\YouTubeShell;
 use Cake\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\TestSuite\TestCase;
+use SmartSolutionsItaly\CakePHP\YouTube\Shell\YouTubeShell;
 
 /**
  * SmartSolutionsItaly\CakePHP\Shell\YouTubeShell Test Case
@@ -11,6 +12,7 @@ use Cake\TestSuite\TestCase;
 class YouTubeShellTest extends TestCase
 {
     use ConsoleIntegrationTestTrait;
+
     /**
      * ConsoleIo mock
      *
@@ -34,7 +36,9 @@ class YouTubeShellTest extends TestCase
     {
         parent::setUp();
         $this->io = $this->getMockBuilder('Cake\Console\ConsoleIo')->getMock();
+
         $this->YouTube = new YouTubeShell($this->io);
+        $this->YouTube->initialize();
     }
 
     /**
@@ -56,8 +60,8 @@ class YouTubeShellTest extends TestCase
      */
     public function testId()
     {
-        $this->YouTube->initialize();
         $id = $this->YouTube->id('nike');
+
         $this->assertNotEmpty($id);
         $this->assertEquals('UCUFgkRb0ZHc4Rpq15VRCICA', $id);
     }
