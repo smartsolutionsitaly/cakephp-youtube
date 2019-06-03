@@ -13,6 +13,24 @@ You can install _cakephp-youtube_ into your project using [Composer](https://get
 composer require smartsolutionsitaly/cakephp-youtube
 ```
 
+## Setup
+Insert at the bottom of your _src/Application.php_ file the following line:
+
+``` php
+$this->addPlugin('SmartSolutionsItaly/CakePHP/YouTube');
+```
+
+And add or edit the method _initialize_ in your _Table_ classes.
+
+``` php
+public function initialize(array $config)
+{
+    parent::initialize($config);
+    
+    $this->addBehavior('SmartSolutionsItaly/CakePHP/YouTube.YouTube');
+}
+```
+
 ## License
 Licensed under The MIT License
 For full copyright and license information, please see the [LICENSE](LICENSE)
